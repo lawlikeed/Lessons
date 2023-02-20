@@ -12,6 +12,10 @@ class Person:
         self.age = age
         self.grade = grade
 
+    # __repr__ is used to show show a string representation of an object
+    def __repr__(self):
+        return f'{self.name} {self.age} {self.grade}'
+
     # Getter functions
     def getName(self):
         return self.name
@@ -50,3 +54,19 @@ p1.setGrade('College')
 print(p1.getName())
 print(p1.getAge())
 print(p1.getGrade())
+
+p2 = Person('Mike', 26, 'College grad')
+
+''' 
+Look at how our person object/instance gets printed without 
+the repr function correct implimented. It should look pretty 
+weird bc it's showing us where the object is located in memory.
+This isn't what we want when we print an instance of an object 
+so now we can go ahead and correctly implement our repr function.
+'''
+print(p1)
+print(p2)
+
+# Another cool thing you can do is this
+print(f'{p1 = }')
+print(f'{p2 = }')
