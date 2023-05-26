@@ -24,13 +24,13 @@ temp_list = []
 
 # Populate ages list with random numbers 
 for x in range(50):
-    num = random.randrange()        # Choose a start and end number - randrange(#,#)
+    num = random.randrange(10,75)
     ages.append(num)
 
 # try to open the file to read from
 try:
     # Read from a file with names in it
-    file = open("""ADD THE FILE TO READ FROM""", 'r')               # FIX THIS, USE CONSTANT
+    file = open(OLD_FILE, 'r')
     temp_list = file.readlines()
     for index in range(len(temp_list)):
         temp_list[index] = temp_list[index].rstrip('\n') 
@@ -52,10 +52,10 @@ else:
 
 # Try opening file to write to 
 try:
-    # write every record to new file (another way to read/write)
-    with open("""ADD THE FILE TO READ FROM""", 'w') as f:           # FIX THIS, USE CONSTANT
+    # write every record to new file
+    with open(NEW_FILE, 'w') as f:
         for record in records:
-            f.write() # ------------------------------------------- # FIX, Write each record ended with a new line to the file
+            f.write(record + '\n')
 # If we can't open the file print the error to the console
 except Exception as system_message:
         print(system_message)
